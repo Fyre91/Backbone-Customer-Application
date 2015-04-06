@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mystore Application</title>
+    <meta charset='utf-8'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+
+<!--Navigation Menu-->    
+<nav class = "navbar navbar-default" role="navigation">
+    <div class = "container-fluid">
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href='#customers'>Customers</a></li>
+                <li><a href='#orders'>Orders</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--View holder-->
+<section class="container-fluid" id="view-container">
+    
+</section>
+
+<!--Template script for customer view. Container for the View. -->
+<script type="text/template" id="custContainerTemp">
+    <h1>Mystore Application</h1>
+    <div class="search-section">
+        <span>Filter: </span>
+        <input type="text" id="search-box" >
+    </div>
+    <div id="customer-view">
+    
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>City</th>
+                  <th>Order Total</th>
+                  <th>Joined</th>
+                  <th>Orders</th>
+                  <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <div> Total Customers : <span class="count"></span></div>
+        <p>Version 1.0 </p>
+    </div>
+</script>
+
+<!--Template script for  displaying individual customer details-->
+<script id="customerTemp" type="text/template">
+    
+        <td><%= name %></td>
+        <td><%= city %></td>
+        <td>$ <%= orderTotal %></td>
+        <td><%= joined %></td>
+        <td><a href="#viewCust/<%= id %>" class="view-order">View Orders</a></td>
+        <td><a href="#delete" class="delete-cust">X</a></td>
+    
+</script>
+
+
+<!--Template script for  displaying individual orders-->
+<script id="individualOrder" type="text/template">
+        
+        <td><%= product %></td>
+        <td class="price">$ <%= total %></td>
+        
+</script>
+
+<!--Template script for  Order view page. Container for the orders-->
+<script id="orderViewTmp" type="text/template">
+ <h1>All Orders</h1>
+    <div class="search-section">
+        <span>Filter: </span>
+        <input type="text" id="search-order-box" >
+    </div>
+    <div id="order-view">
+    
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+            <tfoot>
+                <td></td>
+                <td class="sum"></td>
+            </tfoot>
+        </table>
+     </div>
+</script>
+
+<!--Template script for  Order of specific customer.-->
+<script type="text/template" id="orderContainerTemp">
+        <h1> <%= name %>'s Orders </h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+</script>
+</body>
+
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+<script src="js/libs/underscore-min.js"></script>
+<script src="js/libs/backbone-min.js"></script>
+
+<script src="js/models/customer.js"></script>
+<script src="js/models/order.js"></script>
+
+<script src="js/collections/customer.js"></script>
+<script src="js/collections/orders.js"></script>
+
+
+<script src="js/views/individualOrderView.js"></script>
+<script src="js/views/customerView.js"></script>
+<script src="js/views/customersView.js"></script>
+<script src="js/views/orderView.js"></script>
+<script src="js/views/ordersView.js"></script>
+
+
+<script src="js/routers/routers.js"></script>
+
+
+</html>

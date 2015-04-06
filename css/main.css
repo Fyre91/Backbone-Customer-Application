@@ -1,0 +1,11 @@
+.navbar .container-fluid {
+    padding-left: 0px;
+}
+
+#view-container h1 {
+    margin-bottom: 30px;
+}
+
+#order-view tfoot {
+    background-color: #E0F0D9;
+}
